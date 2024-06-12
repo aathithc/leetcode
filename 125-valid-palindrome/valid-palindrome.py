@@ -1,19 +1,19 @@
-class Solution(object):
-    def isPalindrome(self, s):
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        new = ""
+        for c in s:
+            if c.isalnum():
+                new +=c
+        new = new.lower()
 
-        l = 0
-        r = len(s) -1
+        f = 0
+        l = len(new)-1
 
-        while l < r:
-
-            while l < r and not s[l].isalnum():
-                l += 1
-            
-            while r > l and not s[r].isalnum():
-                r -= 1 
-
-            if s[l].lower() != s[r].lower():
+        while l>f:
+            if new[f] != new[l]:
                 return False
-            l += 1
-            r -= 1
+            else:
+                f+=1
+                l-=1
         return True
+

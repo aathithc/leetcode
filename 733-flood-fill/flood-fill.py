@@ -1,7 +1,6 @@
 class Solution:
 
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-
         fill(image, sr,sc,color,image[sr][sc])
         return image
 

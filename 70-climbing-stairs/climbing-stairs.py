@@ -1,8 +1,5 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        steps = [i for i in range(1, n+1)]
-        print(steps)  # This will print the steps list
-
         if n == 1:
             return 1
         if n == 2:

@@ -1,29 +1,28 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        preMap = {i: [] for i in range(numCourses)}
+        premap = {i: [] for i in range(numCourses)}
 
-        # map each course to : prereq list
-        for crs, pre in prerequisites:
-            preMap[crs].append(pre)
-
+        for cr, pre in prerequisites:
+            premap[cr].append(pre)
+        
+        visited = set()
         visiting = set()
-        visited = set()  # memoization to store the results of already visited courses
+        def dfs(cr):
+            if cr in visiting:
+                return False
+            if cr in visited:
+                return True
+            
+            visiting.add(cr)
 
-        def dfs(crs):
-            if crs in visiting:
-                return False  # cycle detected
-            if crs in visited:
-                return True  # already visited and no cycle
-
-            visiting.add(crs)
-            for pre in preMap[crs]:
+            for pre in premap[cr]:
                 if not dfs(pre):
                     return False
-            visiting.remove(crs)
-            visited.add(crs)
+            visiting.remove(cr)
+            visited.add(cr)
             return True
-
-        for c in range(numCourses):
-            if not dfs(c):
+        for i in range(numCourses):
+            if not dfs(i):
                 return False
         return True
+            

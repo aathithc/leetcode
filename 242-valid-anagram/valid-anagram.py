@@ -4,10 +4,9 @@ class Solution:
             return False
         countS = {}
         countT = {}
-        for c in s:
-            countS[c] = 1 + countS.get(c, 0)
-        for c in t:
-            countT[c] = 1 + countT.get(c, 0)
 
-        return countS == countT
-            
+        for i in range(len(s)):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+
+        return True if countS == countT else False

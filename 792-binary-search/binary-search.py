@@ -5,7 +5,7 @@ class Solution:
 
         while low <= high:
             # Finding the mid using floor division
-            mid = low + ((high - low) // 2)
+            mid = ((high + low) // 2)
 
             # Target value is present at the middle of the array
             if nums[mid] == target:

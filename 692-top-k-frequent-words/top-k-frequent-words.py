@@ -1,8 +1,10 @@
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
                 # Step 1: Count the frequency of each word
-        count = Counter(words)
-        
+        # count = Counter(words)
+        count = {}
+        for i in words:
+            count[i] = 1 + count.get(i, 0)
         # Step 2: Create buckets where index is the frequency, and each bucket contains a list of words
         max_freq = max(count.values())  # Find the maximum frequency
         buckets = [[] for _ in range(max_freq + 1)]  # Create frequency buckets

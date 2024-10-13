@@ -9,8 +9,9 @@ class Solution:
             return None
         
         newhead = head
+        
         if head.next:
             newhead = self.reverseList(head.next)
             head.next.next = head
-        head.next = None
+            head.next = None
         return newhead

@@ -19,4 +19,3 @@ class Solution:
             if n == k:
                 return cur.val
             cur = cur.right
-            

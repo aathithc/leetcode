@@ -3,6 +3,7 @@ class RandomizedSet:
     def __init__(self):
         self.numMap = {}
         self.numList = []
+        
 
     def insert(self, val: int) -> bool:
         res = val not in self.numMap

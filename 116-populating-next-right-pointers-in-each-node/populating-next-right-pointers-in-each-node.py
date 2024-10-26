@@ -12,31 +12,16 @@ class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return None
-        cur = root
-        nxt = root.left
+        q = deque([root])
 
-        while cur and nxt:
-            cur.left.next = cur.right
-            if cur.next:
-                cur.right.next = cur.next.left
-            cur = cur.next
-            if not cur:
-                cur = nxt
-                nxt = cur.left
+        while q:
+            size = len(q)
+            for i in range(size):
+                node = q.popleft()
+                if i < size - 1:
+                    node.next = q[0]
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
         return root
-        # if not root:
-        #     return None
-
-        # q = deque([root])
-
-        # while q:
-        #     size = len(q)
-        #     for i in range(size):
-        #         node = q.popleft()
-        #         if i < size - 1:
-        #             node.next = q[0]
-        #         if node.left:
-        #             q.append(node.left)
-        #         if node.right:
-        #             q.append(node.right)
-        # return root

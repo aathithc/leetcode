@@ -11,13 +11,12 @@ class Node:
 class Solution:
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
-            return head
-        dummy = ListNode()
-        cur = dummy
+            return None
+        dummy = cur = ListNode()
         stack = [head]
         while stack:
             node = stack.pop()
-            if node.next: 
+            if node.next:
                 stack.append(node.next)
             if node.child:
                 stack.append(node.child)
@@ -27,4 +26,3 @@ class Solution:
             cur = node
             dummy.next.prev = None
         return dummy.next
-        

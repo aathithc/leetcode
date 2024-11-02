@@ -24,5 +24,5 @@ class Solution:
             node.prev = cur
             node.child = None
             cur = node
-            dummy.next.prev = None
+        dummy.next.prev = None
         return dummy.next

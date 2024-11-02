@@ -12,7 +12,7 @@ class Solution:
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
             return head
-        dummy = ListNode(0)
+        dummy = ListNode()
         cur = dummy
         stack = [head]
         while stack:

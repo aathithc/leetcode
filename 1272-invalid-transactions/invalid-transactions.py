@@ -3,7 +3,7 @@ class Solution:
         trans = defaultdict(list)
         invalid = set()
 
-        for i,n in enumerate(transactions):
+        for i, n in enumerate(transactions):
             name, time_str, amount_str, city = n.split(",")
             time, amount = int(time_str), int(amount_str)
             trans[name].append((time, city, i))
@@ -12,7 +12,7 @@ class Solution:
                 invalid.add(i)
             
             for time1, city1, i1 in trans[name]:
-                if city1 != city and abs(time1-time) <= 60:
-                    invalid.add(i1)
+                if city1 != city and abs(time-time1) <= 60:
                     invalid.add(i)
+                    invalid.add(i1)
         return [transactions[i] for i in invalid]

@@ -9,5 +9,5 @@ class Solution:
                 charset.remove(s[l])
                 l += 1
             charset.add(s[i])
-            res = max(res, i - l + 1 )
+            res = max(res, i - l + 1)
         return res

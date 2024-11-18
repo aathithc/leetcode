@@ -22,8 +22,9 @@ class RandomizedSet:
             del self.numMap[val]
         return res
 
-    def getRandom(self) -> int: 
+    def getRandom(self) -> int:
         return random.choice(self.numList)
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()

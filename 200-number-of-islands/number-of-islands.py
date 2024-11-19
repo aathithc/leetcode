@@ -8,8 +8,8 @@ class Solution:
 
         def bfs(r,c):
             q = collections.deque()
-            visited.add((r,c))
             q.append((r,c))
+            visited.add((r,c))
             while q:
                 row, col = q.popleft()
                 directions = [[1,0], [0,1], [-1,0], [0,-1]]
@@ -21,7 +21,7 @@ class Solution:
                         (r,c) not in visited):
                         q.append((r,c))
                         visited.add((r,c))
-
+                    
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == "1" and (r,c) not in visited:

@@ -12,7 +12,7 @@ class Solution:
                 invalid.add(i)
             
             for time1, city1, i1 in trans[name]:
-                if city1 != city and abs(time1-time) <= 60:
+                if city != city1 and abs(time1 - time) <= 60:
                     invalid.add(i1)
                     invalid.add(i)
         return [transactions[i] for i in invalid]

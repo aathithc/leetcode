@@ -2,9 +2,9 @@ class Solution:
     def decodeString(self, s: str) -> str:
         stack = []
 
-        for i in range(len(s)):
-            if s[i] != "]":
-                stack.append(s[i])
+        for c in s:
+            if c != "]":
+                stack.append(c)
             else:
                 substr = ""
                 while stack[-1] != "[":
@@ -15,4 +15,3 @@ class Solution:
                     k = stack.pop() + k
                 stack.append(int(k) * substr)
         return "".join(stack)
-

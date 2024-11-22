@@ -20,3 +20,4 @@ class Solution:
                 - bin_search(i + 1, len(nums) - 1, low)
             )
         return res
+        12345

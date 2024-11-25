@@ -3,19 +3,15 @@ class Solution:
         start = sorted([i[0] for i in intervals])
         end = sorted([i[1] for i in intervals])
 
-        s = 0
-        e = 0
-        count = 0
-        res = 0
+        s, e = 0, 0
+        count, res = 0, 0
 
         while s < len(intervals):
             if start[s] < end[e]:
-                count += 1
                 s += 1
+                count += 1
             else:
-                count -= 1
                 e += 1
-            res = max(res, count)
+                count -= 1
+            res = max(count, res)
         return res
-            
-

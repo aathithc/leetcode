@@ -9,4 +9,4 @@ class Solution:
             for c in s:
                 count[ord(c) - ord("a")] += 1
             map[tuple(count)].append(s)
-        return map.values()
+        return list(map.values())

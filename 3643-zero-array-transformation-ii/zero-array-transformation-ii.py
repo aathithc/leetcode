@@ -14,7 +14,7 @@ class Solution:
             for n in range(len(nums)):
                 if line[n] < nums[n]:
                     return False
-            return True
+            return True        
         
         l, r = 0, len(queries) + 1
         result = -1
@@ -22,7 +22,7 @@ class Solution:
             m = (l + r) // 2
             if good(m):
                 result = m
-                r = m 
+                r = m
             else:
                 l = m + 1
         return result if result != -1 else -1

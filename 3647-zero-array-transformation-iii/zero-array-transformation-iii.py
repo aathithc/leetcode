@@ -9,7 +9,6 @@ class Solution:
                 heappush(available, -q.popleft()[1])
             while working and working[0] < i:
                 heappop(working)
-            
             while nums[i] > len(working):
                 if available and -available[0] >= i:
                     heappush(working, -heappop(available))

@@ -7,5 +7,5 @@ class Solution:
             if cur < 0:
                 cur = 0
             cur += i
-            res = max(res, cur)
+            res = max(cur, res)
         return res

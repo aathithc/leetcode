@@ -4,14 +4,13 @@ class Solution:
             return 0
         
         nei = collections.defaultdict(list)
-
         wordList.append(beginWord)
 
         for word in wordList:
             for j in range(len(word)):
-                pattern = word[:j] + "*" + word[j+1:]
+                pattern = word[:j] + "*" + word[j + 1:]
                 nei[pattern].append(word)
-
+        
         visited = set([beginWord])
         q = deque([beginWord])
         res = 1
@@ -21,10 +20,10 @@ class Solution:
                 if word == endWord:
                     return res
                 for j in range(len(word)):
-                    pattern = word[:j] + "*" + word[j+1:]
+                    pattern = word[:j] + "*" + word[j + 1:]
                     for neiWord in nei[pattern]:
                         if neiWord not in visited:
                             visited.add(neiWord)
-                            q.append(neiWord)
+                            q.append(neiWord) 
             res += 1
         return 0

@@ -5,7 +5,6 @@ class Solution:
         for s in strs:
             count = [0] * 26
             for c in s:
-                count[ord(c) - ord("a")] += 1
+                count[ord(c) - ord("a")] += 1 
             anagram[tuple(count)].append(s)
         return list(anagram.values())
-            

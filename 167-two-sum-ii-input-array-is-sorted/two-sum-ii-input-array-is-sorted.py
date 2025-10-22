@@ -11,4 +11,4 @@ class Solution:
             if sum < target:
                 l += 1
             if sum == target:
-                return [l+1, r+1]
+                return [l+1, r+1]       
